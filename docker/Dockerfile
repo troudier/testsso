@@ -22,6 +22,7 @@ RUN mkdir -p /var/www/var/cache /var/www/var/log && chmod 777 -R /var/www/var/ca
 RUN mv /var/www/docker/vhosts/vhosts.conf /etc/apache2/sites-enabled/site.conf \
     && rm -Rf /var/www/docker* \
         .php* \
-        composer*
+        composer* \
+    && a2dissite 000-default
 
 WORKDIR /var/www/
